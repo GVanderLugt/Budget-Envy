@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical" >
+
+    <EditText
+            android:id="@+id/envelopeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Envelope Name" />
+
+    <TextView
+            android:id="@+id/envelopeBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Balance: 0"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50" >
+
+        <EditText
+                android:id="@+id/txtBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/budgetAmount"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+        <TextView
+                android:id="@+id/budgetAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignBottom="@+id/txtBudget"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Budgeted Amount"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+                android:id="@+id/btnDeposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/budgetAmount"
+                android:layout_toLeftOf="@+id/txtDeposit"
+                android:text="Deposit" />
+
+        <EditText
+                android:id="@+id/txtDeposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btnDeposit"
+                android:layout_below="@+id/txtBudget"
+                android:layout_toRightOf="@+id/budgetAmount"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+        <EditText
+                android:id="@+id/txtWithdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btnWithdraw"
+                android:layout_below="@+id/txtDeposit"
+                android:layout_toRightOf="@+id/btnWithdraw"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+        <Button
+                android:id="@+id/btnWithdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/btnDeposit"
+                android:layout_below="@+id/btnDeposit"
+                android:text="Withdraw" />
+
+        <Button
+                android:id="@+id/btnSaveEnvelope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:text="Save Envelope" />
+
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/C:/Users/Gerrit/AndroidStudioProjects/BudgetEnvyProject/BudgetEnvy/src/main/res/layout/activity_envelopeedit.xml -->
