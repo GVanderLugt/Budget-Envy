@@ -13,7 +13,9 @@ import android.widget.TextView;
 
 public class EnvelopeEdit extends Activity {
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,40 +31,40 @@ public class EnvelopeEdit extends Activity {
         final int envelopeIndex = data.getInt("envelopeIndex");
 
         //Set envelope name
-        final EditText nameEditText = (EditText)findViewById(R.id.envelopeName);
+        final EditText nameEditText = (EditText) findViewById(R.id.envelopeName);
         nameEditText.setText(envelopeName, TextView.BufferType.EDITABLE);
 
         //Set envelope budget
-        final EditText budgetEditText = (EditText)findViewById(R.id.txtBudget);
+        final EditText budgetEditText = (EditText) findViewById(R.id.txtBudget);
         budgetEditText.setText(String.valueOf(envelopeBudget), TextView.BufferType.EDITABLE);
 
         //Set envelope balance
-        final TextView balanceTextView = (TextView)findViewById(R.id.envelopeBalance);
+        final TextView balanceTextView = (TextView) findViewById(R.id.envelopeBalance);
         balanceTextView.setText("Balance: " + envelopeBalance);
 
         //Set up onClickListener for btnDeposit
-        Button btnDeposit = (Button)findViewById(R.id.btnDeposit);
-        btnDeposit.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        Button btnDeposit = (Button) findViewById(R.id.btnDeposit);
+        btnDeposit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 System.out.println("You pressed btnDeposit");
             }
         });
 
         //Set up onClickListener for btnWithdraw
-        Button btnWithdraw = (Button)findViewById(R.id.btnWithdraw);
-        btnWithdraw.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        Button btnWithdraw = (Button) findViewById(R.id.btnWithdraw);
+        btnWithdraw.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 System.out.println("You pressed btnWithdraw");
             }
         });
 
         //Set up onClickListener for btnSaveEnvelope
-        Button btnSaveEnvelope = (Button)findViewById(R.id.btnSaveEnvelope);
+        Button btnSaveEnvelope = (Button) findViewById(R.id.btnSaveEnvelope);
 
         final int balance = envelopeBalance;
 
-        btnSaveEnvelope.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        btnSaveEnvelope.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 System.out.println("You pressed btnSaveEnvelope");
 
                 //Get data from activity

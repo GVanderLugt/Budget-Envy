@@ -16,6 +16,7 @@ import java.io.IOException;
 //import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+
 import android.content.Intent;
 
 //import com.example.budgetenvy.Envelope;
@@ -69,7 +70,7 @@ public class MainActivity extends Activity {
 
         //Display Buttons
         int i;
-        for(i=0; i < btnList.size(); i++){
+        for (i = 0; i < btnList.size(); i++) {
             //btnList.get(i)(MainActivity.this);
             //Button btnEnvelope = btnList.get(i);
             //btnEnvelope(MainActivity.this);
@@ -78,9 +79,9 @@ public class MainActivity extends Activity {
         }
 
         //Set up onClickListener for btnAddEnvelope
-        Button btnAddEnvelope = (Button)findViewById(R.id.btnAddEnvelope);
-        btnAddEnvelope.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        Button btnAddEnvelope = (Button) findViewById(R.id.btnAddEnvelope);
+        btnAddEnvelope.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 //Create a new button
                 Button btnEnvelope = new Button(MainActivity.this);
                 btnEnvelope.setText("New Envelope");
@@ -92,8 +93,8 @@ public class MainActivity extends Activity {
                 envelopeList.add(new Envelope());
 
                 //Set up onClickListener for new button
-                btnEnvelope.setOnClickListener(new View.OnClickListener(){
-                    public void onClick(View button){
+                btnEnvelope.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View button) {
                         //Create Intent for EnvelopeEditActivity
                         Intent editEnvelopeIntent = new Intent(MainActivity.this, EnvelopeEditActivity.class);
 
@@ -110,7 +111,7 @@ public class MainActivity extends Activity {
                 });
 
                 //Declare envelopePanel and button parameters
-                LinearLayout ll = (LinearLayout)findViewById(R.id.envelopePanel);
+                LinearLayout ll = (LinearLayout) findViewById(R.id.envelopePanel);
                 LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
                 //Add button to view
@@ -119,28 +120,26 @@ public class MainActivity extends Activity {
         });
 
         //Set up onClickListener for btnSaveBudget
-        Button btnSaveBudget = (Button)findViewById(R.id.btnSaveBudget);
-        btnSaveBudget.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View button){
+        Button btnSaveBudget = (Button) findViewById(R.id.btnSaveBudget);
+        btnSaveBudget.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View button) {
                 //Save envelopeList to file
-                try{
+                try {
                     FileOutputStream fos = new FileOutputStream("envelope.txt");
                     ObjectOutputStream os = new ObjectOutputStream(fos);
                     os.writeObject(envelopeList);
                     os.close();
-                }
-                catch(IOException f){
+                } catch (IOException f) {
                     System.out.println(f.getMessage());
                 }
 
                 //Save btnList to file
-                try{
+                try {
                     FileOutputStream fos = new FileOutputStream("btn.txt");
                     ObjectOutputStream os = new ObjectOutputStream(fos);
                     os.writeObject(btnList);
                     os.close();
-                }
-                catch(IOException f){
+                } catch (IOException f) {
                     System.out.println(f.getMessage());
                 }
             }
@@ -148,8 +147,8 @@ public class MainActivity extends Activity {
     }
 
     //Manage returned data from envelopeEditActivity
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == 1){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
             System.out.println("Stuff happens");
             //Get data from Envelope data
             int envelopeIndex = data.getIntExtra("envelopeIndex", 0);
@@ -163,7 +162,7 @@ public class MainActivity extends Activity {
             Button button = btnList.get(envelopeIndex);
             button.setText(envelopeName + "\n" + envelopeBalance + "/" + envelopeBudget);
         }
-        if(resultCode == RESULT_CANCELED){
+        if (resultCode == RESULT_CANCELED) {
             System.out.println("Canceled");
         }
     }

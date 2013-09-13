@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 public class EnvelopeEditActivity extends Activity {
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,25 +31,25 @@ public class EnvelopeEditActivity extends Activity {
         final Envelope envelope = MainActivity.envelopeList.get(envelopeIndex);
 
         //Set envelope name
-        final EditText nameEditText = (EditText)findViewById(R.id.envelopeName);
+        final EditText nameEditText = (EditText) findViewById(R.id.envelopeName);
         nameEditText.setText(envelope.getName(), TextView.BufferType.EDITABLE);
 
         //Set envelope budget
-        final EditText budgetEditText = (EditText)findViewById(R.id.txtBudget);
+        final EditText budgetEditText = (EditText) findViewById(R.id.txtBudget);
         budgetEditText.setText(String.valueOf(envelope.getBudget()), TextView.BufferType.EDITABLE);
 
         //Set envelope balance
-        final TextView balanceTextView = (TextView)findViewById(R.id.envelopeBalance);
+        final TextView balanceTextView = (TextView) findViewById(R.id.envelopeBalance);
         balanceTextView.setText("Balance: " + envelope.getBalance());
 
         //Set up onClickListener for btnDeposit
-        Button btnDeposit = (Button)findViewById(R.id.btnDeposit);
-        btnDeposit.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        Button btnDeposit = (Button) findViewById(R.id.btnDeposit);
+        btnDeposit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 System.out.println("You pressed btnDeposit");
 
                 //Get input from user
-                EditText depositEditText = (EditText)findViewById(R.id.txtDeposit);
+                EditText depositEditText = (EditText) findViewById(R.id.txtDeposit);
                 int depositAmount = Integer.parseInt(depositEditText.getText().toString());
 
                 //Add to the envelope balance
@@ -59,13 +61,13 @@ public class EnvelopeEditActivity extends Activity {
         });
 
         //Set up onClickListener for btnWithdraw
-        Button btnWithdraw = (Button)findViewById(R.id.btnWithdraw);
-        btnWithdraw.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        Button btnWithdraw = (Button) findViewById(R.id.btnWithdraw);
+        btnWithdraw.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 System.out.println("You pressed btnWithdraw");
 
                 //Get input from user
-                EditText withdrawEditText = (EditText)findViewById(R.id.txtWithdraw);
+                EditText withdrawEditText = (EditText) findViewById(R.id.txtWithdraw);
                 int withdrawAmount = Integer.parseInt(withdrawEditText.getText().toString());
 
                 //Subtract from envelope balance
@@ -77,9 +79,9 @@ public class EnvelopeEditActivity extends Activity {
         });
 
         //Set up onClickListener for btnSaveEnvelope
-        Button btnSaveEnvelope = (Button)findViewById(R.id.btnSaveEnvelope);
-        btnSaveEnvelope.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
+        Button btnSaveEnvelope = (Button) findViewById(R.id.btnSaveEnvelope);
+        btnSaveEnvelope.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
                 System.out.println("You pressed btnSaveEnvelope");
 
                 //Get data from activity

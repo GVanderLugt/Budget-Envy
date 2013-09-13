@@ -1,23 +1,13 @@
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent" >
-    <Button
-            android:id="@+id/btnAddEnvelope"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:text="Add Envelope" />
-    <Button
-            android:id="@+id/btnSaveBudget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:text="Save Budget" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="fill_parent">
+    <Button android:id="@+id/btnAddEnvelope" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" android:layout_alignParentTop="true"
+        android:text="Add Envelope" />
+    <Button android:id="@+id/btnSaveBudget" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" android:layout_alignParentRight="true"
+        android:text="Save Budget" />
 
     <!--    
     <LinearLayout
@@ -29,17 +19,10 @@
         android:layout_below="@+id/btnAddEnvelope"
         android:orientation="vertical" >
    		-->
-    <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_above="@+id/btnSaveBudget"
-            android:layout_below="@+id/btnAddEnvelope">
-        <LinearLayout
-                android:id="@+id/envelopePanel"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-        </LinearLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_above="@+id/btnSaveBudget" android:layout_below="@+id/btnAddEnvelope">
+        <LinearLayout android:id="@+id/envelopePanel" android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:orientation="vertical"></LinearLayout>
     </ScrollView>
     <!--  </LinearLayout> -->
 </RelativeLayout><!-- From: file:/C:/Users/Gerrit/AndroidStudioProjects/BudgetEnvyProject/BudgetEnvy/src/main/res/layout/activity_main.xml -->
