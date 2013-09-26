@@ -1,12 +1,75 @@
 //Envelope
 package com.example.budgetenvy;
 
-public class Envelope implements java.io.Serializable {
-    private static final long serialVersionUID = 1L;
-    private String name = "New Envelope";
-    private int budget = 0;
-    private int balance = 0;
+public class Envelope {
 
+    //private variables
+    private int _id;
+    private String _name = "New Envelope";
+    private int _budget = 0;
+    private int _balance = 0;
+
+    //Empty constructor
+    public Envelope() {
+
+    }
+
+    //Constructor
+    public Envelope(int id, String name, int budget, int balance) {
+        this._id = id;
+        this._name = name;
+        this._budget = budget;
+        this._balance = balance;
+    }
+
+    //Constructor
+    public Envelope(String name, int budget, int balance) {
+        this._name = name;
+        this._budget = budget;
+        this._balance = balance;
+    }
+
+    //Get ID
+    public int getID() {
+        return this._id;
+    }
+
+    //Set ID
+    public void setID(int id) {
+        this._id = id;
+    }
+
+    //Get Name
+    public String getName() {
+        return this._name;
+    }
+
+    //Set Name
+    public void setName(String name) {
+        this._name = name;
+    }
+
+    //Get Budget
+    public int getBudget() {
+        return this._budget;
+    }
+
+    //Set Budget
+    public void setBudget(int budget) {
+        this._budget = budget;
+    }
+
+    //Get Balance
+    public int getBalance() {
+        return this._balance;
+    }
+
+    //Set Balance
+    public void setBalance(int balance) {
+        this._balance = balance;
+    }
+}
+    /*
     public void setName(String newName) {
         name = newName;
     }
@@ -44,5 +107,5 @@ public class Envelope implements java.io.Serializable {
     public void withdraw(int amount) {
         balance -= amount;
     }
-
 }
+*/

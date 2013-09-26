@@ -3,6 +3,7 @@ package com.example.budgetenvy;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -16,6 +17,7 @@ import java.io.IOException;
 //import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Intent;
 
@@ -24,16 +26,45 @@ import android.content.Intent;
 
 public class MainActivity extends Activity {
     //Create an array list to store envelopes
-    public static ArrayList<Envelope> envelopeList = new ArrayList<Envelope>();
+    //public static ArrayList<Envelope> envelopeList = new ArrayList<Envelope>();
 
     //Create an array list to store buttons
-    public static ArrayList<Button> btnList = new ArrayList<Button>();
+    //public static ArrayList<Button> btnList = new ArrayList<Button>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        System.out.println("Working..........");
+
+        DatabaseHandler db = new DatabaseHandler(this);
+
+        System.out.println("Still Working...............");
+
+        //Inserting Envelopes
+        Log.d("Insert: ", "Inserting ..");
+        db.addEnvelope(new Envelope("Gas", 100, 50));
+        db.addEnvelope(new Envelope("Rent", 300, 300));
+
+        System.out.println("Still Working...............");
+
+        //Reading all contacts
+        Log.d("Reading: ", "Reading all contacts..");
+        List<Envelope> envelopes = db.getAllEnvelopes();
+
+        System.out.println("Still Working...............");
+
+        for (Envelope en : envelopes) {
+            String log = "Id: " + en.getID() + " ,Name: " + en.getName() + " ,Budget: " + en.getBudget()
+                    + " ,Balance: " + en.getBalance();
+            //Writing contacts to log
+            Log.d("Name: ", log);
+        }
+        System.out.println("Still Working...............");
+    }
+}
 
 
         /*
@@ -68,6 +99,7 @@ public class MainActivity extends Activity {
         }
         */
 
+        /*
         //Display Buttons
         int i;
         for (i = 0; i < btnList.size(); i++) {
@@ -173,5 +205,7 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    */
+//}
 
-}
+//}

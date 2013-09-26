@@ -11,12 +11,8 @@ import android.widget.TextView;
 
 //import com.example.budgetenvy.MainActivity;
 //import com.example.budgetenvy.R;
-
+/*
 public class EnvelopeEditActivity extends Activity {
-
-    /**
-     * Called when the activity is first created.
-     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,3 +103,4 @@ public class EnvelopeEditActivity extends Activity {
     }
 
 }
+*/
